@@ -1,19 +1,21 @@
 import Image from 'next/image'
 import styles from './index.module.scss'
-import Link from 'next/link'
 import Props from '@/components/types'
 
 const week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 const WeatherNews: React.FC<Props> = ({ weatherNews }) => {
+  if (!weatherNews) {
+    return null
+  }
   const currentWeatherMain = weatherNews.current.weather[0].main
   const currentWeatherTemp = weatherNews.current.temp
-  const currentWeatherIcon = weatherNews.current.weather[0].icon.slice(0, 2) + d
+  const currentWeatherIcon = weatherNews.current.weather[0].icon.slice(0, 2) + 'd'
   return (
     <section className={styles.weather}>
       <h1>Tokyo</h1>
       <div className={styles.weather__main}>
-        <div className={styles.weahter__top}>
+        <div className={styles.weather__top}>
           <div className={styles.weather__heading}>
             <a>{currentWeatherMain}</a>
             <p>
@@ -66,11 +68,9 @@ const WeatherNews: React.FC<Props> = ({ weatherNews }) => {
           </ul>
         </div>
         <div className={styles.weather__bottom}>
-          <Link href="https://weather.jp/onebox/">
-            <a target="_blank" rel="noopener">
-              ウェザーニュース
-            </a>
-          </Link>
+          <a href="https://weather.jp/onebox/" target="_blank" rel="noopener">
+            ウェザーニュース
+          </a>
         </div>
       </div>
     </section>

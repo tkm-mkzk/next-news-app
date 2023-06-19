@@ -29,14 +29,14 @@ const Article: React.FC<Props> = ({ articles, title }) => {
                     時間前
                   </p>
                 </div>
-                {article.urlToImage && (
+                {/* {article.urlToImage && (
                   <Image
                     key={index}
                     src={article.urlToImage}
                     className={styles.article__img}
                     alt={`${article.title} image`}
                   />
-                )}
+                )} */}
               </article>
             </a>
           )

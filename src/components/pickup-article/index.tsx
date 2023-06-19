@@ -3,6 +3,10 @@ import moment from 'moment'
 import Props from '../types'
 
 const PickupArticle: React.FC<Props> = ({ articles }) => {
+  if (!articles) {
+    return null
+  }
+
   return (
     <section className={styles.pickup}>
       <h1 className={styles.article__heading}>PickUp</h1>
