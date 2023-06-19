@@ -5,7 +5,12 @@ import Nav from '@/components/nav'
 import MainLayout from '@/layouts'
 import styles from '@/styles/Home.module.scss'
 
-function Topic(props) {
+type TopicProps = {
+  title: string
+  topicArticles: any
+}
+
+function Topic(props: TopicProps) {
   const router = useRouter()
   if (router.isFallback) {
     return <div>Loading...</div>
@@ -38,7 +43,13 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+type Params = {
+  params: {
+    id: string
+  }
+}
+
+export async function getStaticProps({ params }: Params) {
   const topicRes = await fetch(
     `https://newsapi.org/v2/top-headlines?country=jp&category=${params.id}&country=jp&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
   )

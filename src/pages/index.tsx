@@ -6,7 +6,13 @@ import Nav from '@/components/nav'
 import WeatherNews from '@/components/weather-news'
 import PickupArticle from '@/components/pickup-article'
 
-export default function Home(props) {
+type HomeProps = {
+  topArticles: any
+  weatherNews: any
+  pickupArticles: any
+}
+
+export default function Home(props: HomeProps) {
   console.log(props.topArticles)
   return (
     <MainLayout>
