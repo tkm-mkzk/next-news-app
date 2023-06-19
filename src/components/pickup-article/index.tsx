@@ -1,6 +1,7 @@
 import styles from './index.module.scss'
 import moment from 'moment'
 import Props from '../types'
+import Image from 'next/image'
 
 const PickupArticle: React.FC<Props> = ({ articles }) => {
   if (!articles) {
@@ -26,7 +27,16 @@ const PickupArticle: React.FC<Props> = ({ articles }) => {
                 <p>{article.title}</p>
                 <p className={styles.article__time}>{time}時間前</p>
               </div>
-              {article.urlToImage && <img key={index} src={article.urlToImage} className={styles.article__img} />}
+              {article.urlToImage && (
+                <Image
+                  alt="記事に関する画像"
+                  key={index}
+                  src={article.urlToImage}
+                  className={styles.article__img}
+                  width={500}
+                  height={300}
+                />
+              )}
             </article>
           </a>
         )
