@@ -28,14 +28,7 @@ const PickupArticle: React.FC<Props> = ({ articles }) => {
                 <p className={styles.article__time}>{time}時間前</p>
               </div>
               {article.urlToImage && (
-                <Image
-                  alt="記事に関する画像"
-                  key={index}
-                  src={article.urlToImage}
-                  className={styles.article__img}
-                  width={500}
-                  height={300}
-                />
+                <img alt="記事に関する画像" key={index} src={article.urlToImage} className={styles.article__img} />
               )}
             </article>
           </a>
