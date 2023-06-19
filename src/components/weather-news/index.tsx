@@ -11,6 +11,7 @@ const WeatherNews: React.FC<Props> = ({ weatherNews }) => {
   const currentWeatherMain = weatherNews.current.weather[0].main
   const currentWeatherTemp = weatherNews.current.temp
   const currentWeatherIcon = weatherNews.current.weather[0].icon.slice(0, 2) + 'd'
+
   return (
     <section className={styles.weather}>
       <h1>Tokyo</h1>
