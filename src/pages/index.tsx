@@ -6,6 +6,8 @@ import Nav from '@/components/nav'
 import WeatherNews from '@/components/weather-news'
 import PickupArticle from '@/components/pickup-article'
 
+// test
+
 type HomeProps = {
   topArticles: any
   weatherNews: any
